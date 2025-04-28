@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '/.netlify/functions';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 export default function UploadSection({ onAnalysisComplete, isAnalyzing, setIsAnalyzing }) {
   const [jobDescription, setJobDescription] = useState('');
@@ -46,25 +46,23 @@ export default function UploadSection({ onAnalysisComplete, isAnalyzing, setIsAn
     setIsAnalyzing(true);
 
     try {
-      // Convert file to base64
-      const reader = new FileReader();
-      reader.readAsDataURL(selectedFile);
-      reader.onload = async () => {
-        const base64File = reader.result.split(',')[1];
-        
-        const response = await axios.post(`${API_URL}/analyze`, {
-          file: base64File,
-          job_description: { text: jobDescription }
-        }, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+      // Prepare FormData for backend
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      const jobDescriptionBlob = new Blob([
+        JSON.stringify({ text: jobDescription })
+      ], { type: 'application/json' });
+      formData.append('job_description', jobDescriptionBlob);
 
-        onAnalysisComplete(response.data);
-        toast.success('Analysis complete!');
-        setIsAnalyzing(false);
-      };
+      const response = await axios.post(`${API_URL}/analyze`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      onAnalysisComplete(response.data);
+      toast.success('Analysis complete!');
+      setIsAnalyzing(false);
     } catch (error) {
       console.error('Analysis error:', error);
       toast.error('Failed to analyze resume. Please try again.');

@@ -1,0 +1,28 @@
+{
+    "technical_skills": [
+      "Python", "JavaScript", "Java", "C++", "C#", "Ruby", "PHP", "Swift", "Go",
+      "React", "Angular", "Vue.js", "Node.js", "Django", "Flask", "Spring", "Express",
+      "AWS", "Azure", "GCP", "Docker", "Kubernetes", "Git", "Jenkins", "CircleCI",
+      "SQL", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Elasticsearch",
+      "Machine Learning", "Deep Learning", "AI", "TensorFlow", "PyTorch", "scikit-learn",
+      "Data Analysis", "Data Science", "Big Data", "Hadoop", "Spark", "Power BI",
+      "DevOps", "CI/CD", "Agile", "Scrum", "REST API", "GraphQL", "Microservices",
+      "HTML", "CSS", "SASS", "TypeScript", "Webpack", "Babel", "Jest", "Cypress",
+      "Linux", "Unix", "Bash", "PowerShell", "Network Security", "Cybersecurity",
+      "Cloud Computing", "Serverless", "IaC", "Terraform", "Ansible", "Puppet",
+      "UI/UX Design", "Figma", "Adobe XD", "Sketch", "Responsive Design",
+      "Performance Optimization", "SEO", "Web Analytics", "A/B Testing"
+    ],
+    "soft_skills": [
+      "Communication", "Leadership", "Problem Solving", "Teamwork", "Collaboration",
+      "Time Management", "Critical Thinking", "Adaptability", "Creativity", "Innovation",
+      "Project Management", "Emotional Intelligence", "Negotiation", "Presentation",
+      "Decision Making", "Conflict Resolution", "Strategic Planning", "Mentoring",
+      "Customer Service", "Client Relations", "Cross-functional Coordination",
+      "Analytical Thinking", "Organization", "Attention to Detail", "Initiative",
+      "Self-motivation", "Work Ethic", "Flexibility", "Research", "Documentation",
+      "Training", "Team Building", "Cultural Awareness", "Business Acumen",
+      "Requirements Gathering", "Stakeholder Management", "Risk Management",
+      "Quality Assurance", "Process Improvement", "Change Management"
+    ]
+  }
